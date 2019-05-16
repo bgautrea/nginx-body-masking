@@ -37,7 +37,8 @@ api.conf enables the NGINX Plus API on port 8080 and sets it to read/write. This
 
 ## Usage
 
-### Add an entry to the kv store, make a POST request to the kvstore endpoint
+### Add an entry to the kv store, 
+Make a POST request to the kvstores "mask" endpoint. The payload contains "billing" and a value of 0. If the KV store is empty, the data can contain a json object with multiple entries (ex. '{"billing": 0, "maps": 0, "drivers":0}').
 
 ```
    curl -X POST -d '{"billing": 0}' http://<IP of NGINX>:8080/api/4/http/keyvals/mask
